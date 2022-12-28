@@ -5,7 +5,6 @@
   <br>
 
   ## git init
-  ---
   * 특정 폴더에 git 저장소(repository)를 만들고 버전 관리
     * .git 폴더가 생성됨
     * git bash에서는 (master)라는 표기를 확인할 수 있음 (마스터가 있으면 안됨)
@@ -14,7 +13,6 @@
   <br>
 
   ## git 버전 관리 기초 흐름
-  ---
   * 작업(수정)한 파일 상태 -add-> 커밋할 파일 상태 목록 -commit-> 버전
     1. 작업을 하고
     2. 변경된 파일을 모아 (add)
@@ -119,6 +117,9 @@
   <br>
 
 # 깃허브 기반 원격저장소 활용
+
+<br>
+
 ## 명령어 
   * `push`
     - 로컬 저장소의 버전을 원격저장소로 보낸다
@@ -155,7 +156,7 @@
   * git clone url : 원격 저장소 복제
   * git remote -v : 원격저장소 정보 확인
     verbose : 상세하게 추력한다
-  * git remote add 원격저장소 url :원격저장소 추가 (일반적으로 origin)
+  * git remote add 원격저장소 url : 원격저장소 추가 (일반적으로 origin)
   * git remote rm 원격저장소 : 원격저장소 삭제 (원격저장소에 오타가 있으면 삭제하고 다시 만들기 다른건 복잡함...)
   * git push 원격저장소 브랜치 : 원격저장소에 push
   * git pull 원격저장소 브랜치 : 원격저장소에 pull
