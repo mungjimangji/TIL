@@ -1,12 +1,13 @@
 # git : 분산버전관리 시스템
   - 로컬에서 버전을 기록하고 관리
+  - add, commit 하면서 버전을 기록한다
   <br>
   <br>
   <br>
   ## git init
     * 특정 폴더에 git 저장소(repository)를 만들고 버전 관리
      * .git 폴더가 생성됨
-     * git bash에서는 (master)라는 표기를 확인할 수 있음
+     * git bash에서는 (master)라는 표기를 확인할 수 있음 (마스터가 있으면 안됨)
      * git init 명령어를 사용해야 git으로 관리 됨
   
 
@@ -68,6 +69,9 @@
           
           * nothing to commit, working tree clean 
               - (상황) 작업한 것도 커밋할 것도 없어 (1통, 2통 비어있음)
+
+          * nothing to commit but untracked files present (use "git add" to track)
+            - (상황) 아직 커밋할 것 없음(2통x), 트래킹 되지 않은 파일 있음(1통o)
     
     * $ git log
       - Repository(3통) 의 상태를 앎
@@ -77,5 +81,15 @@
         - $ git log --oneline : 최근 한줄로 조회
         - $ git log -2 --oneline : 최근 2개를 한줄로 조회
         - ※ 하이픈의 갯수나 띄어쓰기 유의
+      - commit d42a51ad5c0b5307eb885a5481ef3c19545baf74 (HEAD -> master)
+        Author: mungjimangji <mungjmangji@hphk.com>
+        Date:   Wed Dec 28 09:49:38 2022 +0900
+      - $ git log --oneline
+        d42a51a (HEAD -> master) 목표 적음 
+          - d42a51a 커밋해쉬값: 고유한 커밋인지 분류해주는 도구
+          - HEAD -> master : 내가 어느 위치에 있는지 알려줌
+
+    * $ git push
+      - No configured push destination.
 
 
