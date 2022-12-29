@@ -55,15 +55,16 @@
     1. $ git add 파일명
     2. $ git commit -m "이름"
     3. $ git push origin main
+  
   <br>
   <br>
-  <br>
+  
   ### - Git의 버전 관리 -
   - Git은 데이터를 파일 시스템의 스냅샷으로 관리하고 매우 크기가 작음
   - 파일이 달라지지 않으면 성능을 위해 파일을 새로 저장 안함
+  
   <br>
-  <br>
-  <br>
+  
   ### - 현재 상태를 알고 싶어요 -
   ```
   $ git status
@@ -88,8 +89,9 @@
 
         * `nothing to commit but untracked files present (use "git add" to track)`
           - (상황) 아직 커밋할 것 없음(2통x), 트래킹 되지 않은 파일 있음(1통o)
+  
   <br>
-  <br>
+
   ```
   $ git log
   ```
@@ -107,8 +109,9 @@
       d42a51a (HEAD -> master) 목표 적음 
         - d42a51a 커밋해쉬값: 고유한 커밋인지 분류해주는 도구
         - HEAD -> master : 내가 어느 위치에 있는지 알려줌
-<br>
-<br>
+
+  <br>
+
   ```
    $ git push       # No configured push destination. (나오면 문제 없음!)
   ````
@@ -118,9 +121,9 @@
 
 # 깃허브 기반 원격저장소 활용
 
-<br>
+  <br>
 
-## 명령어 
+  ## 명령어 
   * `push`
     - 로컬 저장소의 버전을 원격저장소로 보낸다
     - ex) git remote add origin https://github.com/mungjimangji/test1.git
@@ -152,18 +155,18 @@
     - .gitignore 파일을 만들어서 파일명을 적으면 깃이 관리안함 (회색으로 변함) 
       - 폴더는 폴더명/ 으로 적음
       - *.pptx : 뒤에가 .pptx인 모든 파일을 깃으로 설정하지 않는다
-## 명령어 요약
-  * git clone url : 원격 저장소 복제
-  * git remote -v : 원격저장소 정보 확인
-    verbose : 상세하게 추력한다
-  * git remote add 원격저장소 url : 원격저장소 추가 (일반적으로 origin)
-  * git remote rm 원격저장소 : 원격저장소 삭제 (원격저장소에 오타가 있으면 삭제하고 다시 만들기 다른건 복잡함...)
-  * git push 원격저장소 브랜치 : 원격저장소에 push
-  * git pull 원격저장소 브랜치 : 원격저장소에 pull
-<br>
-<br>
-<br>
-<br>
+  ## 명령어 요약
+    * git clone url : 원격 저장소 복제
+    * git remote -v : 원격저장소 정보 확인
+      verbose : 상세하게 추력한다
+    * git remote add 원격저장소 url : 원격저장소 추가 (일반적으로 origin)
+    * git remote rm 원격저장소 : 원격저장소 삭제 (원격저장소에 오타가 있으면 삭제하고 다시 만들기 다른건 복잡함...)
+    * git push 원격저장소 브랜치 : 원격저장소에 push
+    * git pull 원격저장소 브랜치 : 원격저장소에 pull
+  <br>
+  <br>
+  <br>
+  <br>
 
 > ### 주의 & 물음
 - Q. 깃허브에 올리고 로컬에서 파일을 지우면 사라지나요?
