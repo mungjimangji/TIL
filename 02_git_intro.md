@@ -143,7 +143,7 @@
     - git clone 후 git init 안해도 됨
       1. .git 저장소를 받아오는 것 모든 버전을 받는다. (최초로 받는 행위)
       2. 다운로드 zip : 가장 최신버전의 상태의 파일만 받는 것
-    - pull / git init 들과의 차이점...
+    - `pull / clone / init 들과의 차이점`
       - git init : 로컬에서 새로운 프로젝트 시작
       - git pull : 프로젝트 중 다른 사람의 커밋 받아오기
       - git clone : 원격에 있는 프로젝트 시작
