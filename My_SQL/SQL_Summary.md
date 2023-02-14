@@ -123,3 +123,5 @@ select address1, Postal_code from address where address1 = '대전광역시';
 #address테이블의 레코드 중에서 address1필드(컬럼)의 정보가 '대전광역시'인 것만 address1 컬럼과 Postal_code 컬럼을 가져온다.
 ```
 ![select_daejeon_add_post](select_daejeon_add_post.png)
+
+## 데이터베이스 업데이트
