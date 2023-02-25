@@ -28,7 +28,7 @@
   - DQL - 데이터 검색
   - DML - 데이터 조작
   - DCL - 데이터 제어
-  ![DDLDQLDMLDCL](DDL.png)
+  ![DDLDQLDMLDCL](img\DDL.png)
 
 > 정리
 >  - SQL은 데이터베이스와 상호 작용하고 데이터베이스에서 데이터를 반환하기 위한 언어
@@ -83,7 +83,7 @@ create table address( # 테이블 생성 / address : 테이블이름
 
 desc address; # address 테이블 구조
 ```
-![create_db](KakaoTalk_20230208_230232320.png)
+![create_db](img\KakaoTalk_20230208_230232320.png)
 
 `insert into 테이블명 values(넣고싶은자료들...);` # 테이블에 데이터 입력
 
@@ -97,7 +97,7 @@ insert into address values('경기도','성남시 분당구 정자동 44길','D�
 
 select * from address; #address테이블의 모든 조회
 ```
-![insert_data](KakaoTalk_20230208_230443611.png)
+![insert_data](img\KakaoTalk_20230208_230443611.png)
 <br>
 
 ### - 특정 필드(컬럼) 조회 
@@ -106,7 +106,7 @@ select * from address; #address테이블의 모든 조회
 select address1, Postal_Code from address; #address1, Postal_Code 필드 조회
 
 ```
-![select_column](select_dajeon_column.png)
+![select_column](img\select_dajeon_column.png)
 <br>
 
 ### - 조건있는 특정 행 조회
@@ -114,7 +114,7 @@ select address1, Postal_Code from address; #address1, Postal_Code 필드 조회
 ```
 select * from address where address1 = '대전광역시'; # address1이 '대전광역시'인 행 조회
 ```
-![select_daejeon_row](select_dajeon_row.png)
+![select_daejeon_row](img\select_dajeon_row.png)
 <br>
 
 ### - 조건의 필드(컬럼)만 조회
@@ -122,6 +122,6 @@ select * from address where address1 = '대전광역시'; # address1이 '대전�
 select address1, Postal_code from address where address1 = '대전광역시';
 #address테이블의 레코드 중에서 address1필드(컬럼)의 정보가 '대전광역시'인 것만 address1 컬럼과 Postal_code 컬럼을 가져온다.
 ```
-![select_daejeon_add_post](select_daejeon_add_post.png)
+![select_daejeon_add_post](img\select_daejeon_add_post.png)
 
 ## 데이터베이스 업데이트
