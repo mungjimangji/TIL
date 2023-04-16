@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+  <div>
+   
+    {% if request.user.is_authenticated %}
+      <h3>
+        {{ user }}
+        님 안녕하세요!
+      </h3>
+      <div>
+        <a class="btn btn-outline-secondary" href="{% url 'reviews:create' %}">✍🏻후기 작성</a>
+      </div>
+    {% else %}
+      <h3>로그인을 해주세요!</h3>
+      
+    {% endif %}
+
+  </div>
+  {% for review in reviews %}
+    <p>
+      <p>
+        작성자 - 
+        {{review.user}}
+      </p>
+      <p>후기 번호 -
+        {{ review.pk }}
+      </p>
+      <p>
+        영화 이름 -
+        {{review.movie}}
+      </p>
+    </p>
+    <a class="btn btn-outline-secondary" href="{% url 'reviews:detail' review.pk %}">🔍detail</a>
+    <hr>
+  {% endfor %}
+{% endblock content %}

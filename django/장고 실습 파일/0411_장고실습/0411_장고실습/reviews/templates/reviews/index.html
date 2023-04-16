@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  <div>
+    {% for review in reviews %}
+      <p>후기제목:
+        <a href="{% url 'reviews:detail' review.pk %}">{{review.title}}</a>
+      </p>
+      
+      <p>내용: {{review.content}}</p>
+      <p>영화제목: {{review.movie}}</p>
+      <hr>
+    {% endfor %}
+  </div>
+
+{% endblock content %}

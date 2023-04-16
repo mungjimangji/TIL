@@ -1,0 +1,27 @@
+{% extends 'todos/base.html' %}
+
+{% block content %}
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item list-group-item-dark" style="width: 100px">제목</li>
+    <li class="list-group-item list-group-item-dark" style="width: 300px">{{ todo.title }}</li>
+  </ul>
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item list-group-item-dark" style="width: 100px">내용</li>
+    <li class="list-group-item list-group-item-dark" style="width: 300px">{{ todo.content }}</li>
+  </ul>
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item list-group-item-dark" style="width: 100px">완성</li>
+    <li class="list-group-item list-group-item-dark" style="width: 300px">{{ todo.completed }}</li>
+  </ul>
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item list-group-item-dark" style="width: 100px">우선순위</li>
+    <li class="list-group-item list-group-item-dark" style="width: 300px">{{ todo.priority }}</li>
+  </ul>
+  <ul class="list-group list-group-horizontal">
+    <li class="list-group-item list-group-item-dark" style="width: 100px">마감기한</li>
+    <li class="list-group-item list-group-item-dark" style="width: 300px">{{ todo.deadline }}</li>
+  </ul>
+  <a class="btn btn-secondary mt-2" href="{% url 'todos:delete' todo.pk  %}">삭제하기</a>
+  <a class="btn btn-secondary mt-2" href="{% url 'todos:update' todo.pk %}">수정하기</a>
+  <a class="btn btn-secondary mt-2" href="{% url 'todos:index' %}">뒤로가기</a>
+{% endblock content %}

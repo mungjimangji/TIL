@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 class="mb-3">Detail</h1>
+  <p>후기 번호 - {{review.pk}}</p>
+  <p>후기 제목 - {{review.title}}</p>
+  <p>후기 내용 - {{review.content}}</p>
+  <p>영화 이름 - {{review.movie}}</p>
+  {% if review.image %}
+   
+      <img style="height:5rem" src="{{review.image.url}}" alt="img">
+  
+  {% endif %}
+  <form action="{% url 'reviews:delete' review.pk %}" method="POST">
+    {% csrf_token %}
+    <input class="btn btn-outline-danger mt-3" type="submit" value="삭제">
+  </form>
+
+
+  <hr>
+  <h5>전체 댓글 수 - {{comments|length}}</h5>
+  <ul>
+    {% for comment in comments %}
+      <li>
+        {{comment.content}}
+        <form action="{% url 'reviews:comment_delete' review.pk comment.pk %}" method="POST">
+          {% csrf_token %}
+          <input class="btn btn-outline-danger" type="submit" value="삭제">
+        </form>
+      </li>
+
+    {% endfor %}
+    <li>
+      <form action="{% url 'reviews:comment_create' review.pk %}" method="POST">
+        {% csrf_token %}
+        {{comment_form}}
+        <input class="btn btn-outline-secondary" type="submit">
+      </form>
+    </li>
+  </ul>
+  
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'todos/base.html' %}
+
+{% block content %}
+  <form action={% url 'todos:update' todo.pk %} method="POST">
+    {% csrf_token %}
+    <div class="input-group mb-3" style="width: 500px">
+      <label class="input-group-text" for="title">제목</label>
+      <input class="form-control" type="text" name="title" id="title" value="{{ todo.title }}">
+    </div>
+
+    <div class="input-group mb-3" style="width: 500px">
+      <label class="input-group-text" for="content">내용</label>
+      <textarea class="form-control" name="content" id="content" cols="30" rows="10">{{ todo.content }}</textarea>
+    </div>
+    
+    <div class="input-group mb-3" style="width: 500px">
+      <label class="input-group-text" for="priority">우선순위</label>
+      <input class="form-control" type="text" name="priority" id="priority" value="{{ todo.priority }}">
+    </div>
+
+    <div class="input-group mb-3" style="width: 500px">
+      <label class="input-group-text" for="deadline">마감기한</label>
+      <input class="form-control" type="date" name="deadline" id="deadline" value="{{ todo.deadline }}">
+    </div>
+
+    <div class="mb-3">
+      <label for="completed">완료</label>
+      <span>T</span>
+      <input type="checkbox" name = "completed" id="completed" value="True">
+      <span>F</span>
+      <input type="checkbox" name= "completed" id="completed" value="False">
+    </div>
+
+    <div>
+      <input class="btn btn-outline-primary" type="submit">
+    </div>
+
+    
+  </form>
+  <a class="btn btn-outline-light" href="{% url 'todos:index' %}">뒤로가기</a>
+{% endblock content %}

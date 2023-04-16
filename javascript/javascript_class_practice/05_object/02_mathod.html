@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 본인 호출 후 안에 name값 가져오기
+    const person = {
+      name: 'Sophia',
+      greeting: function () {
+        return `hello, ${this.name}`
+      },
+    }
+    // greeting 메서드 호출
+    console.log(person.greeting())
+
+    // this
+    // 단순 호출 시
+    const myFunc = function () {
+      return this
+    }
+    console.log(myFunc())
+    // 진짜 대장은 window
+
+    // nested 함수에서의 this
+    const myObj2 = {
+      numbers: [1, 2, 3],
+
+      // 화살표 함수는 자신만의 this를 가지지 않기에 외부 함수의 this를 가져옴
+      myFunc: function() {
+        this.numbers.forEach((number) => {
+          console.log(this)
+        })
+      }
+    }
+    console.log(myObj2.myFunc())
+  </script>
+</body>
+</html>

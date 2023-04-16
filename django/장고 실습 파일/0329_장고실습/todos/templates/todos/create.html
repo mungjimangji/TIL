@@ -1,0 +1,9 @@
+{% extends 'todos/base.html' %}
+
+{% block content %}
+  <div>
+    <h3>작성 완료~</h3>
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAxMTNfMjY5%2FMDAxNjEwNTE0NTUwMDQ4.8bgDkHpITiNYa7JNKd96uZWtjcOT-ZjMjxpSdfn3DiMg.t1Vy8jSoiFAkr0hFBFglijea3BEH-xdDAptwqjCE1JQg.JPEG.iubang123%2F1610514545415.jpg&type=sc960_832" alt="">
+  </div>
+  <a class="btn btn-outline-light" href="{% url 'todos:new' %}">뒤로가기</a>
+{% endblock content %}

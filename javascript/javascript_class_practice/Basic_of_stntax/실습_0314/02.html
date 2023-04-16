@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="original" class="container">
+    <div>
+      <div class="mb-3">
+        <label for="inputEmail" class="form-label">이메일</label>
+        <input type="email" class="form-control" id="inputEmail">
+      </div>
+      <div class="mb-3">
+        <label for="inputPassword" class="form-label">비밀번호</label>
+        <input type="password" class="form-control" id="inputPassword">
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-primary" role="submit">로그인</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="copy" class="container m-2">
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+</body>
+
+<script>
+  // 이름없는 컨테이너 생성
+  const container = document.createElement('div')
+  container.id = 'original'
+  container.classList.add('container')
+
+  // mb-3 이름 가진 3개의 div중 첫번째
+  const innerDiv1 = document.createElement('div')
+  innerDiv1.classList.add('mb-3')
+
+  // 이메일 폼
+  const emailLabel = document.createElement('label')
+  emailLabel.setAttribute('for', 'inputEmail')
+  emailLabel.classList.add('form-label')
+  emailLabel.textContent = '이메일'
+
+  const emailInput = document.createElement('input')
+  emailInput.setAttribute('type', 'email')
+  emailInput.classList.add('form-control')
+  emailInput.id = 'inputEmail'
+
+  // 첫번째 div에 추가
+  innerDiv1.appendChild(emailLabel)
+  innerDiv1.appendChild(emailInput)
+
+  // mb-3 이름 가진 3개의 div중 두번째
+  const innerDiv2 = document.createElement('div')
+  innerDiv2.classList.add('mb-3')
+
+  // 비번 입력
+  const passwordLabel = document.createElement('label')
+  passwordLabel.setAttribute('for', 'inputPassword')
+  passwordLabel.classList.add('form-label')
+  passwordLabel.textContent = '비밀번호'
+
+  const passwordInput = document.createElement('input')
+  passwordInput.setAttribute('type', 'password')
+  passwordInput.classList.add('form-control')
+  passwordInput.id = 'inputPassword'
+
+  // 두번째 div에 추가
+  innerDiv2.appendChild(passwordLabel)
+  innerDiv2.appendChild(passwordInput)
+
+  // mb-3 이름 가진 3개의 div중 세번째
+  const innerDiv3 = document.createElement('div')
+  innerDiv3.classList.add('mb-3')
+
+  // 로그인버튼
+  const loginButton = document.createElement('button')
+  loginButton.classList.add('btn', 'btn-primary')
+  loginButton.setAttribute('role', 'submit')
+  loginButton.textContent = '로그인'
+
+  // 세번째 div에 추가
+  innerDiv3.appendChild(loginButton)
+
+
+  // 클래스 없는 div 만들기
+  const newDiv = document.createElement('div')
+
+  // container 내부 이름없는 div에 싹다추가
+  newDiv.appendChild(innerDiv1)
+  newDiv.appendChild(innerDiv2)
+  newDiv.appendChild(innerDiv3)
+
+  // container에 이름없는 div 추가
+  container.appendChild(newDiv)
+
+  // copy에 container 추가
+  const copyTag = document.querySelector("#copy")
+  copyTag.appendChild(container)
+
+</script>
+
+</html>

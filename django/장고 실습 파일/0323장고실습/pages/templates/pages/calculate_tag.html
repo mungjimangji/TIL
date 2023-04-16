@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+  <h2><a href="{% url 'pages:calculate' 2 1 %}">2 1</a></h2>
+  <h2><a href="{% url 'pages:calculate' 10 5 %}">10 5</a></h2>
+  <h2><a href="{% url 'pages:calculate' 8 4 %}">8 4</a></h2>
+  <h2><a href="{% url 'pages:calculate' 10 5 %}">10 5</a></h2>
+
+{% endblock content %}

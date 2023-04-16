@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+  <h3>DETAIL</h3>
+  <p>
+    작성자 - 
+    {{review.user}}
+  </p>
+  <p>
+    후기 번호 -
+    {{review.pk}}
+  </p>
+  <p>
+    후기 제목 -
+    {{review.title}}
+  </p>
+  <p>
+    후기 내용 -
+    {{review.content}}
+  </p>
+  <p>
+    영화 이름 -
+    {{review.movie}}
+  </p>
+  {% if request.user == review.user %}
+    <form action="{% url 'reviews:delete' review.pk  %}" method="POST">
+      {% csrf_token %}
+      <input class="btn btn-outline-danger mb-2" type="submit" value="삭제">
+    </form>
+    <a class="btn btn-outline-success" href="{% url 'reviews:update' review.pk %}">UPDATE</a>
+  {% endif %}
+  <a class="btn btn-outline-secondary" href="{% url 'reviews:index' %}">back</a>
+  <hr>
+  <form action="{% url 'reviews:comment_create' review.pk %}" method="post">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <input class="btn btn-outline-secondary btn-sm" type="submit" value="✍🏻댓글 작성">
+  </form>
+  <hr>
+  <h3>
+    댓글 목록
+  </h3>
+  {% for comment in comments %}
+    <div>
+      <p>
+        {{ comment.user }}
+      </p>
+      <p>댓글 번호 -
+        {{ comment.pk }}</p>
+      <p>
+        댓글 내용 -
+        {{comment.content}}
+      </p>
+      {% if request.user == comment.user %}
+        <form action="{% url 'reviews:comment_delete' review.pk comment.pk %}" method="POST">
+          {% csrf_token %}
+          <input class="btn btn-outline-danger btn-sm" type="submit" value="댓글 삭제">
+        </form>
+      {% endif %}
+    </div>
+    <hr>
+  {% endfor %}
+{% endblock content %}

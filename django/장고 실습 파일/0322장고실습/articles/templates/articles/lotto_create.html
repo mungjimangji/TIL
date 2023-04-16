@@ -1,0 +1,10 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+  <form action="/lotto/" method="GET" class="input-group p-4">
+    <input type="text" name="message" class="form-control" style="width: 500px;">  
+    <button type="submit" class="btn btn-outline-primary">입력</button>
+  </form>
+
+
+{% endblock content %}

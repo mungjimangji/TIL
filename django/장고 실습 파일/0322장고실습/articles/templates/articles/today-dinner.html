@@ -1,0 +1,17 @@
+{% extends 'articles/base.html' %}
+{% block style %}
+  <style>
+    .random_font {
+      color : crimson;
+    }
+    h1 {
+      font-weight: 600;
+    }
+  </style>
+
+{% endblock style %}
+
+
+{% block content %}
+  <h1>오늘의 추천 저녁 메뉴는 <span class="random_font">{{ foods|random }}</span>입니다.</h1>
+{% endblock content %}

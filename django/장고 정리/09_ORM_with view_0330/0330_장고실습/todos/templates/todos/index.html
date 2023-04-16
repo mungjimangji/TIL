@@ -1,0 +1,17 @@
+{% extends 'todos/base.html' %}
+
+{% block content %}
+  <div class="ms-2 mt-2">
+    <a class="btn btn-success mb-3" href="{% url 'todos:new' %}">새로만들기</a>
+    {% for todo in todos %}
+      <p class= "mb-2">
+        <form action={% url 'todos:complete' todo.pk %} method="POST">
+          {% csrf_token %}
+          <a class="btn btn-outline-success" style="width : 50px" href="{% url 'todos:detail' todo.pk %}">{{ todo.pk }}</a>
+          <input class="btn btn-outline-success" style="width : 70px" type="text" name="completed" value={{ todo.completed }}>
+          <input class="btn btn-outline-success" type="submit" value="완료">
+        </form>
+      </p>
+    {% endfor %}
+  </div>
+{% endblock content %}
