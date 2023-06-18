@@ -44,6 +44,7 @@ SELECT column_name FROM table_name;
     - FROM clause 뒤에 위치
     - search_condition은 비교 연산자 및 논리 연산자(AND, OR, NOT등)를 사용하는 구문이 사용됨
     - 1과 4 사이 (officeCode>=1 AND officeCode<=4 와 같음)
+    - 
       ```
       WHERE
         officeCode BETWEEN 1 AND 4;
